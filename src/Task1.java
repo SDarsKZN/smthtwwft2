@@ -2,13 +2,12 @@ import java.util.Scanner;
 
 public class Task1 {
     public static void main(String[] args) {
-        //задание
-        int s = 0;
-        while (s < 10) {
+        //задание(здесь пока не учитываются високосные года)
             Scanner scan1 = new Scanner(System.in);
             int day = scan1.nextInt();
-            int thebest = day;
-            if(day <= 365) {
+            int a = day/365;
+            int thebest = day-a*365;
+            if(day > 0) {
                 if (thebest <= 31 && thebest > 0) {
                     System.out.println("janyary");
                 }
@@ -48,10 +47,8 @@ public class Task1 {
                 if (thebest == 0) {
                     System.out.println("dec");
                 }
-                s=1;
             }
             else
-                s=s+1;
-        }
+                System.out.println("u stupid");
     }
 }
