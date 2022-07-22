@@ -4,9 +4,8 @@ public class Mass1 {
     public static void main(String[] args) {
         //1
         int[] artrayOfInts = new int[10];
-        artrayOfInts[0] = 1;
-        for(int i = 1; i < artrayOfInts.length; i++){
-            artrayOfInts[i] = artrayOfInts[i-1] + 1;
+        for(int i = 0; i < artrayOfInts.length; i++){
+            artrayOfInts[i] = i+1;
         }
         for(int current : artrayOfInts){
             System.out.println(current);
@@ -115,23 +114,38 @@ public class Mass1 {
             mass1[i] = locel;
         }
         int maks = mass1[0];//здесь ищем максмальный элемент
+        int maksel = 0;
         for (int i = 0; i < elem; i++) {
             if(mass1[i] > maks){
                 maks = mass1[i];
+                maksel = i ;
             }
         }
         System.out.println(maks);//вывели максимальный элемент
 
 
         int min = mass1[0];//здесь ищем минимальный элемент
+        int minel = 0 ;
         for (int i = 0; i < elem; i++) {
             if(mass1[i] < min){
-                maks = mass1[i];
+                min = mass1[i];
+                minel = i ;
             }
         }
         System.out.println(min);//вывели минималный элемент
 
+        //теперь среднее арифметическое
+        float sr = 0;
+        for (int i = 0; i < mass1.length; i++) {
+            sr = sr + mass1[i];
+        }
+        sr = sr/ mass1.length;
+        System.out.println(sr);//вывели среднее арифметическое
 
+        //теперь количество элементов между минимальным и максимальпным элементом
+        System.out.println(Math.abs(maksel - minel) - 1);
+
+        //первое простое число
 
     }
 }
